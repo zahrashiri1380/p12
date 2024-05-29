@@ -25,17 +25,18 @@ byte armsUp[8] = {
 };
 
 void setup() {
+  // initialize lcd and setup the number of columns and rows:
   lcd.begin(16, 2);
 
-  lcd.createChar(0, armsDown);
-  lcd.createChar(1, armsUp);
+  lcd.createChar(0, armsDown); //create a new character
+  lcd.createChar(1, armsUp); //create a new character
 }
 
 void loop() {
   for (int i = 7; i > -1; i--) {
     if (i % 2 == 0) {
       lcd.setCursor(i, 0);
-      lcd.write(byte(0));
+      lcd.write(byte(0)); 
       lcd.setCursor(15 - i, 0);
       lcd.write(byte(0));
     }
